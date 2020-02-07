@@ -3,7 +3,7 @@
 이 프로젝트는 [Create React App](https://github.com/facebook/create-react-app)의 템플릿에 따라 제작 된 한국어 `cra-template-ko` 입니다.
 
 ```sh
-$ npx create-react-app --template cra-template-ko
+$ npx create-react-app <프로젝트_이름> --template cra-template-ko
 ```
 
 <br>
