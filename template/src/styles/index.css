@@ -1,3 +1,6 @@
+/* CSS Grid 모듈 사용 설정 */
+/* autoprefixer grid: autoplace */
+
 /* PostCSS Normalize (normalize.css) 사용 설정 */
 @import-normalize;
 
@@ -6,7 +9,9 @@
  */
 body {
   margin: 0;
-  font-family: "Spoqa Han Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Spoqa Han Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #fff;
@@ -36,5 +41,6 @@ abbr[title] {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
