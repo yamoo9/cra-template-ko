@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import App from 'components/App/App';
 import * as serviceWorker from 'config/serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('reactApp'));
 
 // 앱을 오프라인에서 작동시키고 보다 빠르게 로드 하고자 한다면?
 // 아래 코드의 unregister()를 register()로 변경합니다.
