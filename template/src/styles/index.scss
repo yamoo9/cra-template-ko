@@ -1,6 +1,8 @@
-/* CSS Grid 모듈 사용 설정 */
+// CSS Grid 모듈 사용 설정
 /* autoprefixer grid: autoplace */
 
-/* PostCSS Normalize (normalize.css) 사용 설정 */
+// PostCSS Normalize (normalize.css) 사용 설정
 @import-normalize;
+
+// 사용자 정의 브라우저 초기화 설정 (normalize.css 덮어쓰기)
 @import "./custom-reset.scss";
