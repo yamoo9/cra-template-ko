@@ -3,14 +3,7 @@
     "dependencies": {
       "@testing-library/react": "^9.4.0",
       "@testing-library/jest-dom": "^5.1.1",
-      "@testing-library/user-event": "^8.1.0",
-      "classnames": "^2.2.6",
-      "node-sass": "^4.13.1",
-      "serve": "^11.3.0"
-    },
-    "scripts": {
-      "serve": "serve -s build",
-      "build-and-serve": "npm run build && npm run serve"
+      "@testing-library/user-event": "^8.1.0"
     }
   }
 }
