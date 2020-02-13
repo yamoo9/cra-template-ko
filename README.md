@@ -18,6 +18,8 @@ $ npx create-react-app <프로젝트_이름> --template cra-template-ko-craco
 - Browserslist 배포(production) 한국(KR) 환경으로 수정 및 IE 11 이상 지원 설정
 - `craco` 패키지 추가
 - `craco.config.js` 설정 → Webpack 설정 덮어쓰기 (Sass Sourcemap 사용 설정)
+- `craco-alias` 패키지 추가
+- `jsconfig.json` 설정 → `compilerOptions.paths`에 `@` 별칭(alias) 등록
 
 
 ## 커스텀 템플릿
