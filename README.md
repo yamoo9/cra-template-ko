@@ -1,9 +1,10 @@
-# cra-template-ko
+# cra-template-ko-craco
 
-이 프로젝트는 [Create React App](https://github.com/facebook/create-react-app)의 템플릿에 따라 제작 된 한국어 `cra-template-ko` 입니다.
+이 프로젝트는 [Create React App](https://github.com/facebook/create-react-app)의 템플릿에 따라 제작 된 한국어 버전 `cra-template-ko-craco` 입니다.
+CRA의 `eject` 대신, [craco]()를 사용해 사용자 정의 개발 환경을 구성(Configuration) 할 수 있습니다. (예: Webpack 설정 덮어쓰기)
 
 ```sh
-$ npx create-react-app <프로젝트_이름> --template cra-template-ko
+$ npx create-react-app <프로젝트_이름> --template cra-template-ko-craco
 ```
 
 ## 추가된 항목
@@ -15,6 +16,8 @@ $ npx create-react-app <프로젝트_이름> --template cra-template-ko
 - `serve` 패키지 및 빌드 실행 명령 추가
 - `jsconfig.json` 절대 경로 및 Webpack 별칭(alias) 설정
 - Browserslist 배포(production) 한국(KR) 환경으로 수정 및 IE 11 이상 지원 설정
+- `craco` 패키지 추가
+- `craco.config.js` 설정 → Webpack 설정 덮어쓰기 (Sass Sourcemap 사용 설정)
 
 
 ## 커스텀 템플릿
