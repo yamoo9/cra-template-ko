@@ -5,9 +5,17 @@
       "~/*": [
         "./*"
       ],
+      "@api/*": [
+        "api/*",
+        "api"
+      ],
       "@assets/*": [
         "assets/*",
         "assets"
+      ],
+      "@context/*": [
+        "context/*",
+        "context"
       ],
       "@config/*": [
         "config/*",
