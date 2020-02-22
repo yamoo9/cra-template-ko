@@ -3,7 +3,6 @@ import 'styles/index.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from 'components/App/App';
-import * as serviceWorker from 'config/serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('reactApp'));
 
@@ -12,5 +11,5 @@ ReactDOM.render(<App />, document.getElementById('reactApp'));
 // [⚠️주의! 이 방법은 몇 가지 문제를 발생할 수 있습니다.]
 // 서비스 워커에 대해 자세히 알아보기: https://bit.ly/CRA-PWA
 if (process.env.NODE_ENV === 'production') {
-  serviceWorker.register();
+  import('@config/serviceWorker').then(({ register }) => register());
 }
