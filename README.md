@@ -1,26 +1,28 @@
-# cra-template-ko-craco
+# cra-template-ko-redux
 
-이 프로젝트는 [Create React App](https://github.com/facebook/create-react-app)의 템플릿에 따라 제작 된 한국어 버전 `cra-template-ko-craco` 입니다.
-CRA의 `eject` 대신, [craco](https://github.com/gsoft-inc/craco)를 사용해 사용자 정의 개발 환경을 구성(Configuration) 할 수 있습니다. (예: [Webpack 설정 덮어쓰기](https://github.com/gsoft-inc/craco/blob/master/packages/craco/README.md#overridewebpackconfig))
+이 프로젝트는 [Create React App](https://github.com/facebook/create-react-app)의 템플릿에 따라 제작 된 한국어 버전 커스텀 템플릿 `cra-template-ko-redux` 입니다.
+
+## 프로젝트 시작
+
+CRA 커스텀 템플릿 옵션 플래그(`--template`)을 사용해 프로젝트를 시작할 수 있습니다.
 
 ```sh
-$ npx create-react-app <프로젝트_이름> --template cra-template-ko-craco
+$ npx create-react-app <프로젝트_이름> --template cra-template-ko-redux
 ```
 
 ## 추가된 항목
 
-기본 템플릿 `cra-template`에 추가된 항목입니다.
+커스텀 템플릿 [cra-template-ko-craco](https://www.npmjs.com/package/cra-template-ko-craco)에 추가 확장된 항목입니다.
 
-- `node-sass` 패키지 추가
-- `classnames` 패키지 추가
-- `serve` 패키지 및 빌드 실행 명령 추가
-- `jsconfig.json` 절대 경로 및 Webpack 별칭(alias) 설정
-- Browserslist 배포(production) 한국(KR) 환경으로 수정 및 IE 11 이상 지원 설정
-- `craco` 패키지 추가
-- `craco.config.js` 설정 → Webpack 설정 덮어쓰기 (Sass Sourcemap 사용 설정)
-- `craco-alias` 패키지 추가
-- `jsconfig.json` 설정 → `compilerOptions.paths`에 `@` 별칭(alias) 등록
-
+- `redux` 패키지 추가
+- `react-redux` 패키지 추가
+- `redux-devtools-extension` 패키지 추가
+- `redux-thunk` 패키지 추가
+- `revalidate` 패키지 추가
+- `styled-components` 패키지 추가
+- `semantic-ui-react` 패키지 추가
+- `semantic-ui-css` 패키지 추가
+- `react-syntax-highlighter` 패키지 추가
 
 ## 커스텀 템플릿
 

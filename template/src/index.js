@@ -1,10 +1,25 @@
 import 'react-app-polyfill/ie11';
+
+// 스타일
+import 'semantic-ui-css/semantic.min.css';
 import 'styles/index.scss';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from 'components/App/App';
 
-ReactDOM.render(<App />, document.getElementById('reactApp'));
+// Redux 스토어 공급자 래퍼 컴포넌트 불러오기
+import { StoreProvider } from '~/store';
+
+// 컴포넌트
+import App from '~/App/AppDemo';
+
+// DOM 렌더링
+ReactDOM.render(
+  <StoreProvider>
+    <App />
+  </StoreProvider>,
+  document.getElementById('reactApp')
+);
 
 // 앱을 오프라인에서 작동시키고 보다 빠르게 로드 하고자 한다면?
 // 아래 코드의 unregister()를 register()로 변경합니다.

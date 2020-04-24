@@ -1,5 +1,5 @@
 {
-  "name": "cra-template-ko-craco",
+  "name": "cra-template-ko-redux",
   "version": "1.0.3",
   "description": "Create React App 템플릿 한국어 버전입니다.",
   "scripts": {
@@ -27,17 +27,28 @@
     "extends": "react-app"
   },
   "dependencies": {
-    "@craco/craco": "^5.6.3",
-    "@testing-library/react": "^9.4.0",
-    "@testing-library/jest-dom": "^5.1.1",
-    "@testing-library/user-event": "^8.1.0",
-    "craco-alias": "^2.1.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "^3.3.1",
-    "react-app-polyfill": "^1.0.6",
+    "@craco/craco": "^5.6.4",
+    "@testing-library/jest-dom": "^5.5.0",
+    "@testing-library/react": "^10.0.3",
+    "@testing-library/user-event": "^10.1.0",
     "classnames": "^2.2.6",
-    "node-sass": "^4.13.1",
-    "serve": "^11.3.0"
+    "craco-alias": "^2.1.1",
+    "node-sass": "^4.14.0",
+    "react": "^16.13.1",
+    "react-app-polyfill": "^1.0.6",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "react-scripts": "^3.4.1",
+    "redux": "^4.0.5",
+    "redux-form": "^8.3.5",
+    "redux-thunk": "^2.3.0",
+    "revalidate": "^1.2.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.2",
+    "serve": "^11.3.0",
+    "styled-components": "^5.1.0",
+    "uuid": "^7.0.3",
+    "react-syntax-highlighter": "^12.2.1",
+    "redux-devtools-extension": "^2.13.8"
   }
 }
