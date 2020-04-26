@@ -5,6 +5,18 @@ import { Container, Header, Input } from 'semantic-ui-react';
 // 액션 크리에이터 함수 불러오기
 import { changeReduxConnectDemo } from './actionCreators';
 
+// [mapStateToProps]
+// 스토어의 상태를 불러와 컴포넌트 props 속성으로 맵핑
+const mapState = (state) => ({
+  reduxConnectDemo: state.reduxConnectDemo,
+});
+
+// [mapDispatchToProps]
+// 액션 크리에이터 함수를 불러와 컴포넌트 props 속성으로 맵핑
+const mapActions = {
+  changeReduxConnectDemo,
+};
+
 /**
  * ConnectStoreDemo 컴포넌트
  */
@@ -54,16 +66,5 @@ class ReduxConnectDemo extends Component {
   }
 }
 
-// connect() 고차 컴포넌트 랩핑
-export default connect(
-  // [mapStateToProps]
-  // 스토어의 상태를 불러와 컴포넌트 props 속성으로 맵핑
-  (state) => ({
-    reduxConnectDemo: state.reduxConnectDemo,
-  }),
-  // [mapDispatchToProps]
-  // 액션 크리에이터 함수를 불러와 컴포넌트 props 속성으로 맵핑
-  {
-    changeReduxConnectDemo,
-  }
-)(ReduxConnectDemo);
+// connect() 고차 컴포넌트(curring 함수) 랩핑
+export default connect(mapState, mapActions)(ReduxConnectDemo);

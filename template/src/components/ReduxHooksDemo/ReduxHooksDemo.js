@@ -1,8 +1,5 @@
-import _ from 'lodash';
-import styled from 'styled-components';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { arduinoLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import React, { Fragment, useCallback } from 'react';
+import SyntaxHighlighter from 'react-syntax-highlighter';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   Container,
@@ -15,12 +12,11 @@ import {
   Message,
 } from 'semantic-ui-react';
 
-import { changeReduxHooksDemo } from './actions';
+// 코드 문법 하이라이팅 참고: https://highlightjs.org/static/demo
+import { githubGist } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-// 스타일 컴포넌트
-const StyledContainer = styled(Container)`
-  margin-bottom: 5rem;
-`;
+// 액션 생성 함수(Action Creator) 불러오기
+import { changeReduxHooksDemo } from './actions';
 
 /**
  * ReduxHooksDemo 컴포넌트
@@ -34,15 +30,13 @@ const ReduxHooksDemo = () => {
 
   // 핸들러
   const handleRemoveCard = useCallback(
-    (removeId) => {
-      dispatch(changeReduxHooksDemo(removeId));
-    },
+    (removeId) => dispatch(changeReduxHooksDemo(removeId)),
     [ dispatch ]
   );
 
   // 렌더링
   return (
-    <StyledContainer>
+    <Container style={{ marginBottom: '5rem' }}>
       <Header as="h2" size="medium" color="teal">
         React Redux, Hooks + Functional 컴포넌트 데모
       </Header>
@@ -53,7 +47,7 @@ const ReduxHooksDemo = () => {
       </p>
 
       <Card.Group doubling itemsPerRow={3} stackable>
-        {_.map(cards, (card) => (
+        {cards.map((card) => (
           <Card key={card.id}>
             <Image src={card.avatar} />
             <Card.Content>
@@ -86,7 +80,7 @@ const ReduxHooksDemo = () => {
         Redux 스토어 상태
       </Header>
 
-      <Message positive={cards.length} negative={cards.length === 0}>
+      <Message positive={!!cards.length} negative={cards.length === 0}>
         <Message.Header>
           {cards.length ? (
             `Redux 스토어 상태 개수는 ${cards.length}개 입니다.`
@@ -97,11 +91,11 @@ const ReduxHooksDemo = () => {
       </Message>
 
       <Segment textAlign="left" piled style={{ padding: '0 1em' }}>
-        <SyntaxHighlighter language="json" style={arduinoLight}>
+        <SyntaxHighlighter language="json" style={githubGist}>
           {JSON.stringify(cards, null, 2)}
         </SyntaxHighlighter>
       </Segment>
-    </StyledContainer>
+    </Container>
   );
 };
 
