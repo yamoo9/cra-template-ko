@@ -21,7 +21,7 @@
   "main": "template.json",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yamoo9/cra-template-ko/tree/cra-template-ko-craco"
+    "url": "https://github.com/yamoo9/cra-template-ko/tree/cra-template-ko-redux"
   },
   "license": "MIT",
   "engines": {

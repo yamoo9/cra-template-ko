@@ -3,7 +3,12 @@ import { connect } from 'react-redux';
 import { Container, Header, Input } from 'semantic-ui-react';
 
 // 액션 크리에이터 함수 불러오기
-import { changeReduxConnectDemo } from './actionCreators';
+import {
+  // 동기 액션 크리에이터 함수
+  changeReduxConnectDemo,
+  // 비동기 액션 크리에이터 함수
+  changeReduxConnectDemoAsync,
+} from './actionCreators';
 
 // [mapStateToProps]
 // 스토어의 상태를 불러와 컴포넌트 props 속성으로 맵핑
@@ -15,6 +20,7 @@ const mapState = (state) => ({
 // 액션 크리에이터 함수를 불러와 컴포넌트 props 속성으로 맵핑
 const mapActions = {
   changeReduxConnectDemo,
+  changeReduxConnectDemoAsync,
 };
 
 /**
@@ -29,11 +35,11 @@ class ReduxConnectDemo extends Component {
   // 메서드
   handleChangeContent = (e) => {
     const { value } = e.target;
-    const { changeReduxConnectDemo } = this.props;
+    const { changeReduxConnectDemoAsync } = this.props;
 
     value.length > 0
-      ? changeReduxConnectDemo(value)
-      : changeReduxConnectDemo(this.state.initialContent);
+      ? changeReduxConnectDemoAsync(value, 2000) // 2초 지난 후, 액션 디스패치(전달)
+      : changeReduxConnectDemoAsync(this.state.initialContent); // 즉시 액션 디스패치(전달)
   };
 
   // 라이프 사이클 훅
@@ -52,7 +58,7 @@ class ReduxConnectDemo extends Component {
         <Header as="h2" size="small" color="blue">
           {reduxConnectDemo}
         </Header>
-        <p>입력 필드에 내용을 입력하면 Redux의 상태를 변경하는 액션을 전달(dispatched Action) 합니다.</p>
+        <p>입력 필드에 내용을 입력하면 비동기(시간 지연)적으로 Redux의 상태를 변경하는 액션을 디스패치 합니다.</p>
         <Input
           fluid
           icon="react"
