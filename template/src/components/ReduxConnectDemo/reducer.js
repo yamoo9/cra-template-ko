@@ -1,4 +1,4 @@
-import { DEMO_REDUX_CONNNECT } from './constants';
+import { DEMO_REDUX_CONNNECT } from './actionTypes';
 
 const initState = 'React Redux, Connect HOC + Class 컴포넌트 데모';
 

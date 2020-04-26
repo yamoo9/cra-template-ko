@@ -5,13 +5,15 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 
 // 리듀서
+import { asyncLoadingReducer } from '~/store/async/asyncReducer';
 import demoReduxConnectReducer from '~/components/ReduxConnectDemo/reducer';
 import demoReduxHooksReducer from '~/components/ReduxHooksDemo/reducer';
 
 // 리듀서 병합
 const rootReducer = combineReducers({
-  reduxConnectDemo: demoReduxConnectReducer,
+  loading: asyncLoadingReducer,
   reduxHooksDemo: demoReduxHooksReducer,
+  reduxConnectDemo: demoReduxConnectReducer,
 });
 
 // 미들웨어
