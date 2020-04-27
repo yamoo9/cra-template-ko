@@ -1,33 +1,38 @@
-import { FETCH_PEOPLE_API, DEMO_REDUX_HOOKS } from './actionTypes';
 import {
-  asyncLoadingStart,
-  asyncLoadingFinish,
-  asyncLoadingError,
-} from '~/store/async/asyncActions';
+  REMOVE_CARD,
+  FETCH_PEOPLE_API_START,
+  FETCH_PEOPLE_API_FINISH,
+  FETCH_PEOPLE_API_ERROR,
+} from './actionTypes';
 
 // 액션 크리에이터 함수
-export const fetchData = (json) => ({
-  type: FETCH_PEOPLE_API,
-  payload: json,
+export const removeCard = (removeID) => ({
+  type: REMOVE_CARD,
+  payload: removeID,
 });
 
-export const changeReduxHooksDemo = (value) => ({
-  type: DEMO_REDUX_HOOKS,
-  payload: value,
+const fetchPeopleApiStart = () => ({
+  type: FETCH_PEOPLE_API_START,
+});
+const fetchPeopleApiFinish = (data) => ({
+  type: FETCH_PEOPLE_API_FINISH,
+  payload: data,
+});
+const fetchPeopleApiError = (error) => ({
+  type: FETCH_PEOPLE_API_ERROR,
+  error,
 });
 
 // 비동기 액션 크리에이터 함수
-export const fetchDataAsync = (apiAdress) => {
+export const fetchPeopleApiAsync = (apiAdress) => {
   return async (dispatch) => {
-    dispatch(asyncLoadingStart());
+    dispatch(fetchPeopleApiStart());
     try {
       const res = await fetch(apiAdress);
       const json = await res.json();
-      dispatch(asyncLoadingFinish());
-      dispatch(fetchData(json.data));
+      dispatch(fetchPeopleApiFinish(json.data));
     } catch (error) {
-      dispatch(asyncLoadingError());
-      console.error(error.message);
+      dispatch(fetchPeopleApiError(error));
     }
   };
 };

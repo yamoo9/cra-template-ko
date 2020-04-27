@@ -13,9 +13,10 @@ import {
 
 // [mapStateToProps]
 // 스토어의 상태를 불러와 컴포넌트 props 속성으로 맵핑
-const mapState = (state) => ({
-  reduxConnectDemo: state.reduxConnectDemo,
-  loading: state.loading,
+const mapState = ({ reduxConnectDemo: { data, loading, error } }) => ({
+  data,
+  loading,
+  error,
 });
 
 // [mapDispatchToProps]
@@ -47,18 +48,18 @@ class ReduxConnectDemo extends Component {
   // 라이프 사이클 훅
   componentDidMount() {
     this.setState({
-      initialContent: this.props.reduxConnectDemo,
+      initialContent: this.props.data,
     });
   }
 
   // 렌더링
   render() {
-    const { reduxConnectDemo, loading } = this.props;
+    const { data, loading } = this.props;
 
     return (
       <Container text>
         <Header as="h2" size="small" color="blue">
-          {loading ? '로딩 중...' : reduxConnectDemo}
+          {loading ? '로딩 중...' : data}
         </Header>
         <p>입력 필드에 내용을 입력하면 비동기(시간 지연)적으로 Redux의 상태를 변경하는 액션을 디스패치 합니다.</p>
         <Input

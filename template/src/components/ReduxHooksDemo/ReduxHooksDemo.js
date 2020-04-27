@@ -1,4 +1,4 @@
-import React, { Fragment, useCallback, useEffect, useState } from 'react';
+import React, { Fragment, useCallback, useEffect } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -16,27 +16,23 @@ import {
 import { githubGist } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 // 액션 생성 함수(Action Creator) 불러오기
-import { changeReduxHooksDemo, fetchDataAsync } from './actions';
+import { fetchPeopleApiAsync, removeCard } from './actions';
 
 /**
  * ReduxHooksDemo 컴포넌트
  */
 const ReduxHooksDemo = () => {
   // Redux 상태 가져오기
-  const { cards, loading } = useSelector((state) => ({
-    cards: state.reduxHooksDemo,
-    loading: state.loading,
-  }));
-
-  //컴포넌트 상태
-  const [ isFetchData, setIsFetchData ] = useState(false);
+  const { data: cards, loading, error } = useSelector(
+    (state) => state.reduxHooksDemo
+  );
 
   // 디스패치 가져오기
   const dispatch = useDispatch();
 
   // 핸들러
   const handleRemoveCard = useCallback(
-    (removeId) => dispatch(changeReduxHooksDemo(removeId)),
+    (removeId) => dispatch(removeCard(removeId)),
     [ dispatch ]
   );
 
@@ -45,17 +41,22 @@ const ReduxHooksDemo = () => {
     () => {
       dispatch(
         // 비동기 통신 요청
-        fetchDataAsync('//euid-blended-learning.firebaseio.com/people.json')
+        fetchPeopleApiAsync(
+          '//euid-blended-learning.firebaseio.com/people.json'
+        )
       );
     },
     [ dispatch ]
   );
 
-  // 로딩 중인 상태의 렌더링
-  if (!isFetchData && loading) {
-    // 최초 1회 로딩 후, 더 이상 로딩되지 않도록 설정
-    setIsFetchData(true);
+  // 로딩 중, 렌더링
+  if (loading) {
     return <div>로딩 중.........</div>;
+  }
+
+  // 오류 발생 시, 렌더링
+  if (error) {
+    return <div>{error.message}</div>;
   }
 
   // 렌더링
