@@ -1,4 +1,4 @@
-import React, { Fragment, useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -10,6 +10,7 @@ import {
   Segment,
   Icon,
   Message,
+  Placeholder,
 } from 'semantic-ui-react';
 
 // 코드 문법 하이라이팅 참고: https://highlightjs.org/static/demo
@@ -49,11 +50,6 @@ const ReduxHooksDemo = () => {
     [ dispatch ]
   );
 
-  // 로딩 중, 렌더링
-  if (loading) {
-    return <div>로딩 중.........</div>;
-  }
-
   // 오류 발생 시, 렌더링
   if (error) {
     return <div>{error.message}</div>;
@@ -65,35 +61,56 @@ const ReduxHooksDemo = () => {
       <Header as="h2" size="medium" color="teal">
         React Redux, Hooks + Functional 컴포넌트 데모
       </Header>
-
       <p>
         카드의 제거 버튼을 클릭하면 Redux의 상태를 변경하는 액션을 전달(dispatched Action) 하여 상태를 업데이트
         합니다.
       </p>
 
-      <Card.Group doubling itemsPerRow={3} stackable>
-        {cards.map((card) => (
-          <Card key={card.id}>
-            <Image src={card.avatar} />
-            <Card.Content>
-              <Fragment>
+      {/* 로딩 유무에 따라 조건부 렌더링 */}
+      {loading ? (
+        <Card.Group doubling itemsPerRow={3} stackable>
+          {[ 1, 2, 3 ].map((card) => (
+            <Card key={card}>
+              <Placeholder>
+                <Placeholder.Image square />
+              </Placeholder>
+              <Card.Content>
+                <Placeholder>
+                  <Placeholder.Header>
+                    <Placeholder.Line length="very short" />
+                    <Placeholder.Line length="medium" />
+                  </Placeholder.Header>
+                  <Placeholder.Paragraph>
+                    <Placeholder.Line length="short" />
+                  </Placeholder.Paragraph>
+                </Placeholder>
+              </Card.Content>
+            </Card>
+          ))}
+        </Card.Group>
+      ) : (
+        <Card.Group doubling itemsPerRow={3} stackable>
+          {cards.map((card) => (
+            <Card key={card.id}>
+              <Image src={card.avatar} />
+              <Card.Content>
                 <Card.Header>{card.header}</Card.Header>
                 <Card.Meta>{card.date}</Card.Meta>
                 <Card.Description>{card.description}</Card.Description>
-              </Fragment>
-            </Card.Content>
-            <Card.Content extra>
-              <Button type="button" disabled icon="plus" content="추가" />
-              <Button
-                type="button"
-                icon="trash"
-                content="제거"
-                onClick={() => handleRemoveCard(card.id)}
-              />
-            </Card.Content>
-          </Card>
-        ))}
-      </Card.Group>
+              </Card.Content>
+              <Card.Content extra>
+                <Button type="button" disabled icon="plus" content="추가" />
+                <Button
+                  type="button"
+                  icon="trash"
+                  content="제거"
+                  onClick={() => handleRemoveCard(card.id)}
+                />
+              </Card.Content>
+            </Card>
+          ))}
+        </Card.Group>
+      )}
 
       <Header
         as="h3"
@@ -104,7 +121,6 @@ const ReduxHooksDemo = () => {
         <Icon name="database" size="tiny" />
         Redux 스토어 상태
       </Header>
-
       <Message positive={!!cards.length} negative={cards.length === 0}>
         <Message.Header>
           {cards.length ? (
@@ -114,7 +130,6 @@ const ReduxHooksDemo = () => {
           )}
         </Message.Header>
       </Message>
-
       <Segment textAlign="left" piled style={{ padding: '0 1em' }}>
         <SyntaxHighlighter language="json" style={githubGist}>
           {JSON.stringify(cards, null, 2)}
