@@ -10,7 +10,7 @@ $ npx create-react-app <프로젝트_이름> --template cra-template-ko
 
 기본 템플릿 `cra-template`에 추가된 항목입니다.
 
-- `node-sass` 패키지 추가
+- `sass` 패키지 추가
 - `classnames` 패키지 추가
 - `serve` 패키지 및 빌드 실행 명령 추가
 - `jsconfig.json` 절대 경로 및 Webpack 별칭(alias) 설정
