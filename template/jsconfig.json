@@ -5,9 +5,11 @@
   "include": ["src"],
   "paths": {
     "@assets": ["./assets/*"],
-    "@config": ["./config/*"],
+    "@styles": ["./styles/*"],
+    "@hooks": ["./hooks/*"],
+    "@utils": ["./utils/*"],
     "@components": ["./components/*"],
-    "@pages": ["./pages/*"],
-    "@styles": ["./styles/*"]
+    "@container": ["./container/*"],
+    "@pages": ["./pages/*"]
   }
 }
