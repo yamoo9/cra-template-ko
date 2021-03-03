@@ -1,11 +1,13 @@
 {
   "name": "cra-template-ko",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "keywords": [
     "react",
     "create-react-app",
     "template",
     "template-ko",
+    "classnames",
+    "serve",
     "sass"
   ],
   "author": "야무 <yamoo9@naver.com> (http://yamoo9.github.io/)",
@@ -17,7 +19,7 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   },
   "bugs": {
     "url": "https://github.com/yamoo9/cra-template-ko/issues"
