@@ -5,13 +5,15 @@
     "react",
     "create-react-app",
     "template",
-    "template-ko",
+    "template-ko-craco",
+    "classnames",
+    "serve",
     "sass",
     "craco",
     "craco-alias"
   ],
   "author": "야무 <yamoo9@naver.com> (http://yamoo9.github.io/)",
-  "description": "Create React App 템플릿 한국어 버전입니다. craco 사용자 정의 환경 구성이 포함되어 있습니다.",
+  "description": "Create React App 템플릿 한국어 버전입니다. CRACO 커스텀 환경 구성이 포함되어 있습니다.",
   "main": "template.json",
   "repository": {
     "type": "git",
@@ -19,7 +21,7 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   },
   "bugs": {
     "url": "https://github.com/yamoo9/cra-template-ko/issues"

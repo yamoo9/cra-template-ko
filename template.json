@@ -1,9 +1,49 @@
 {
   "package": {
     "dependencies": {
-      "@testing-library/react": "^9.4.0",
-      "@testing-library/jest-dom": "^5.1.1",
-      "@testing-library/user-event": "^8.1.0"
+      "@testing-library/jest-dom": "^5.11.9",
+      "@testing-library/react": "^11.2.5",
+      "@testing-library/user-event": "^12.8.1",
+      "eslint-plugin-jsx-a11y": "^6.4.1",
+      "@craco/craco": "^6.1.1",
+      "craco-alias": "^2.2.0",
+      "craco-favicons": "^1.0.0",
+      "craco-image-optimizer-plugin": "^0.0.4",
+      "classnames": "^2.2.6",
+      "sass": "^1.32.8",
+      "serve": "^11.3.2"
+    },
+    "scripts": {
+      "start": "craco start",
+      "build": "craco build",
+      "test": "craco test",
+      "serve": "serve -s build",
+      "build-and-serve": "npm run build && npm run serve"
+    },
+    "eslintConfig": {
+      "extends": [
+        "react-app",
+        "react-app/jest",
+        "plugin:jsx-a11y/recommended"
+      ],
+      "plugins": [
+        "jsx-a11y"
+      ],
+      "rules": {
+        "jsx-a11y/alt-text": 2
+      }
+    },
+    "browserslist": {
+      "production": [
+        ">1% in KR",
+        "not dead",
+        "not ie <= 10"
+      ],
+      "development": [
+        "last 2 chrome version",
+        "last 2 firefox version",
+        "last 1 safari version"
+      ]
     }
   }
 }

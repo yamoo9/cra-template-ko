@@ -1,49 +1,9 @@
 {
   "compilerOptions": {
     "baseUrl": "src",
-    "paths": {
-      "~/*": [
-        "./*"
-      ],
-      "@api/*": [
-        "api/*",
-        "api"
-      ],
-      "@assets/*": [
-        "assets/*",
-        "assets"
-      ],
-      "@context/*": [
-        "context/*",
-        "context"
-      ],
-      "@config/*": [
-        "config/*",
-        "config"
-      ],
-      "@components/*": [
-        "components/*",
-        "components"
-      ],
-      "@pages/*": [
-        "pages/*",
-        "pages"
-      ],
-      "@styles/*": [
-        "styles/*",
-        "styles"
-      ],
-      "@utils/*": [
-        "utils/*",
-        "utils"
-      ],
-      "@HOC/*": [
-        "HOC/*",
-        "HOC"
-      ]
+    "include": ["src"],
+    "paths": { 
+      "@components/*": [ "components/*", "components" ]
     }
-  },
-  "include": [
-    "src"
-  ]
+  }
 }
