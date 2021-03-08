@@ -3,7 +3,7 @@
   "name": "이듬(E.UID) 블렌디드 러닝",
   "icons": [
     {
-      "src": "favicon.png",
+      "src": "assets/favicon.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
