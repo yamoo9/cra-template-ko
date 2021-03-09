@@ -13,6 +13,7 @@ $ npx create-react-app <프로젝트_이름> --template ko
 - `sass` 패키지 추가
 - `classnames` 패키지 추가
 - `serve` 패키지 및 빌드 실행 명령 추가
+- `eslint-plugin-jsx-a11y` 패키지 추가
 - `jsconfig.json` 절대 경로 및 Webpack 별칭(alias) 설정
 - Browserslist 배포(production) 한국(KR) 환경으로 수정 및 IE 11 이상 지원 설정
 

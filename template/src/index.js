@@ -1,12 +1,14 @@
-import React from 'react'
+import 'react-app-polyfill/ie11'
+import 'react-app-polyfill/stable'
+import { StrictMode } from 'react'
 import { render } from 'react-dom'
-import './styles/index.css'
+import './styles/index.scss'
 
 import App from './app/App'
 
 render(
-  <React.StrictMode>
+  <StrictMode>
     <App />
-  </React.StrictMode>,
+  </StrictMode>,
   document.getElementById('root')
 )
